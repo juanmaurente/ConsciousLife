@@ -29,31 +29,45 @@
 	height: 100%;
 	border: 1px solid blue;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
 }
+
+.cardTitle {
+	margin-top: 0px;
+	margin-bottom: 24px;
+	font-size: 48px;
+	line-height: 56px;
+	font-weight: 500;
+	color: var(--color-white);
+}
+
 @media screen and (min-width: 860px) {
 	.heroContainer {
 		height: 80vh;
 		clip-path: polygon(0 1%, 100% 0%, 100% 86%, 0% 100%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.card {
-		height: 500px;
-		width: 500px;
-		display: flex;
+		height: 80vh;
+		width: 1200px;
+		margin: 0;
+		display: inline-flex;
 		flex-direction: row;
 	}
 
 	.cardImage {
-		width: 50%;
 		height: 100%;
+		width: 50%;
 		background-color: yellow;
 	}
 
 	.cardInfo {
 		width: 50%;
-		height: 100%;
-		background-color: blue;
+		overflow-x: hidden;
 	}
 }
