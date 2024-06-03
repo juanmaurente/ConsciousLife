@@ -1,0 +1,82 @@
+:root {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	font-weight: 300;
+	background-color: var(--color-white);
+  color: var(--color-black)
+  --color-white: #fdfffa;
+  --color-green: #80c93f;
+  --color-light-green:  #a2e26a;
+  --color-black: #210000
+  --color-purple: #446c9b;
+}
+
+*,*::after,*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-size: 96px;
+	font-weight: lighter;
+	letter-spacing: -1.5px;
+}
+
+h2 {
+	font-size: 60px;
+	font-weight: lighter;
+	letter-spacing: -0.5px;
+}
+
+h3 {
+	font-size: 48px;
+	font-weight: normal;
+	letter-spacing: 0px;
+}
+
+h4 {
+	font-size: 34px;
+	font-weight: normal;
+}
+
+p {
+	font-size: 16px;
+	font-weight: normal;
+	letter-spacing: 0.5px;
+}
+
+.container{
+  width: auto;
+}
+
+@media screen and (min-width:860px){
+  .container{
+    max-width: 1200px;
+    
+  }
+  
+}
+
+a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+}
+
+a:hover {
+	color: #535bf2;
+}
+

@@ -1,0 +1,59 @@
+.heroContainer {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(
+		90deg,
+		rgba(128, 201, 63, 1) 0%,
+		rgba(162, 226, 106, 1) 100%,
+		rgba(0, 212, 255, 1) 100%
+	);
+}
+
+.card {
+	height: 100vh;
+	margin: 0 20px;
+	padding-top: 10rem;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.cardImage {
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+}
+
+.cardInfo {
+	width: 100%;
+	height: 100%;
+	border: 1px solid blue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media screen and (min-width: 860px) {
+	.heroContainer {
+		height: 80vh;
+		clip-path: polygon(0 1%, 100% 0%, 100% 86%, 0% 100%);
+	}
+
+	.card {
+		height: 500px;
+		width: 500px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.cardImage {
+		width: 50%;
+		height: 100%;
+		background-color: yellow;
+	}
+
+	.cardInfo {
+		width: 50%;
+		height: 100%;
+		background-color: blue;
+	}
+}
