@@ -1,24 +1,25 @@
 .heroContainer {
 	position: relative;
-	height: 100vh;
+	height: 120%;
+	min-height: 870px;
 	width: 100vw;
 	background: linear-gradient(
 		90deg,
-		rgb(139, 230, 60) 0%,
-		#5b970d 100%,
+		rgb(149, 247, 119) 0%,
+		#7ed40e 100%,
 		rgba(0, 212, 255, 1) 100%
 	);
 	background-size: 300% 300%;
 	animation: gradientAnimation 4s ease infinite;
-	padding-top: 10rem;
+	padding: 10rem 0;
 }
 
 @keyframes gradientAnimation {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0% 20%;
 	}
 	50% {
-		background-position: 100% 50%;
+		background-position: 100% 80%;
 	}
 	100% {
 		background-position: 0% 50%;
@@ -27,6 +28,7 @@
 
 .card {
 	height: 100%;
+	min-height: 850px;
 	margin: 0 20px;
 	display: flex;
 	flex-direction: column-reverse;
@@ -36,9 +38,12 @@
 	box-shadow: 0 5px 20px 0 rgba(33, 44, 66, 0.2);
 	position: relative; /* Ajustado */
 	z-index: 1; /* Ajustado */
+	border-radius: 50px;
+	overflow: hidden;
 }
 .cardImage img {
 	height: 100%;
+	min-width: 350px;
 	width: 100%;
 	object-fit: cover;
 }
@@ -51,6 +56,7 @@
 	overflow: hidden;
 	text-align: center;
 	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .cardTitle {
@@ -65,7 +71,8 @@
 @media screen and (min-width: 860px) {
 	.heroContainer {
 		height: 80vh;
-		clip-path: polygon(0 1%, 100% 0%, 100% 86%, 0% 100%);
+		padding-top: 20rem;
+		clip-path: polygon(0 0%, 100% 0%, 100% 86%, 0% 100%);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -73,7 +80,8 @@
 	}
 
 	.card {
-		height: 80vh;
+		height: 75vh;
+		min-height: 860px;
 		width: 1200px;
 		margin: 0;
 		display: inline-flex;
@@ -99,5 +107,6 @@
 		align-items: start;
 		justify-content: center;
 		margin-left: 2rem;
+		margin-bottom: 0;
 	}
 }
