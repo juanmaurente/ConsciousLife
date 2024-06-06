@@ -4,20 +4,22 @@
 	letter-spacing: 0.5px;
 	font-weight: 300;
 	background-color: var(--color-white);
-  color: var(--color-black);
-  --color-white: #fdfffa;
-  --color-green: #80c93f;
-  --color-light-green:  #a2e26a;
-  --color-dark-green:  #496524;
-  
-  --color-black: #210000
-  --color-purple: #446c9b;
+	color: var(--color-black);
+	--color-white: #fdfffa;
+	--color-white-transparent: #fdfffa79;
+	--color-green: #80c93f;
+	--color-light-green: #a2e26a;
+	--color-dark-green: #122429;
+	--color-black: #210000;
+	--color-purple: #446c9b;
 }
 
-*,*::after,*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 h1,
@@ -60,16 +62,14 @@ p {
 	letter-spacing: 0.5px;
 }
 
-.container{
-  width: auto;
+.container {
+	width: auto;
 }
 
-@media screen and (min-width:860px){
-  .container{
-    max-width: 1200px;
-    
-  }
-  
+@media screen and (min-width: 860px) {
+	.container {
+		max-width: 1200px;
+	}
 }
 
 a {
@@ -81,4 +81,3 @@ a {
 a:hover {
 	color: #535bf2;
 }
-

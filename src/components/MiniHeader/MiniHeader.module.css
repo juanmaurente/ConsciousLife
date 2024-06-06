@@ -1,6 +1,6 @@
 .miniHeader {
 	display: inline-block;
-	color: var(--color-white);
+	color: var(--color-white-transparent);
 	border: 1px solid #fdfffa77;
 	padding: 2px 10px;
 	text-transform: uppercase;

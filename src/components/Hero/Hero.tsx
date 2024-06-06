@@ -1,40 +1,137 @@
-import ContactButton from '../ContactButton/ContactButton';
-import MiniHeader from '../MiniHeader/MiniHeader';
 import styles from './Hero.module.css';
-import photo from '../../assets/DALL·E 2024-06-03 23.17.10 - A person standing on top of a mountain at midday, in a calm, meditative pose. The background features lush greenery, with trees and plants creating a .webp';
+import aboutPhoto from '../../assets/pexels-pixabay-47059.jpg';
+import portfolioPhoto from '../../assets/pexels-timegrocery-1905054.jpg';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
 const Hero = () => {
-	gsap.registerPlugin(useGSAP);
-
 	useGSAP(() => {
-		// gsap code here...
+		gsap.registerPlugin(ScrollTrigger);
 
-		gsap.from('.cardImage', {
-			x: -50,
-			duration: 0.5,
-			opacity: 0,
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: `.${styles.welcome}`,
+				start: 'top center',
+			},
 		});
-	});
+
+		tl.from(`.${styles.navList} li`, {
+			opacity: 0,
+			y: 20,
+			stagger: 0.2,
+			duration: 0.3,
+		})
+
+			.from(
+				`.${styles.footerList} li`,
+				{
+					opacity: 0,
+					y: 20,
+					stagger: 0.2,
+					duration: 0.3,
+				},
+				'-=0.3',
+			)
+			.from(
+				`.title`,
+				{
+					opacity: 0,
+					x: -20,
+					duration: 0.3,
+				},
+				'-=0.2',
+			)
+			.from(
+				`.about`,
+				{
+					opacity: 0,
+					x: -20,
+					duration: 0.3,
+				},
+				'-=0.2',
+			)
+			.from(
+				`.portfolio`,
+				{
+					opacity: 0,
+					x: -20,
+					duration: 0.5,
+				},
+				'-=0.2',
+			);
+	}, []);
 
 	return (
-		<div className={styles.heroContainer}>
-			<div className={`container ${styles.heroContent}`}>
-				<div className={styles.card}>
-					<div className={`cardImage ${styles.cardImage}`}>
-						<img src={photo} alt='men meditating in a mountain' />
+		<>
+			<main>
+				<div className={`${styles.panel} ${styles.welcome}`}>
+					<nav>
+						<ul className={styles.navList}>
+							<li>
+								<a href=''>Home</a>
+							</li>
+							<li>
+								<a href=''>About</a>
+							</li>
+							<li>
+								<a href=''>Gallery</a>
+							</li>
+							<li>
+								<a href=''>Contact</a>
+							</li>
+						</ul>
+					</nav>
+					<div className='title'>
+						<h1>Conscious Life</h1>
+						<h3 className={styles.headerWhite}>
+							Empower your mind, unleash your potential
+						</h3>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing
+							elit. Dolore eius aperiam debitis.
+						</p>
 					</div>
-					<div className={styles.cardInfo}>
-						<MiniHeader text='Conscious Life' />
-						<h1 className={styles.cardTitle}>
-							Empower Your Mind, Unleash Your Potential
-						</h1>
-						<ContactButton />
+					<footer>
+						<ul className={styles.footerList}>
+							<li>
+								<a href=''>Link1</a>
+							</li>
+							<li>
+								<a href=''>Link2</a>
+							</li>
+							<li>
+								<a href=''>Link3</a>
+							</li>
+						</ul>
+					</footer>
+				</div>
+
+				<div className={`${styles.panel} ${styles.about}`}>
+					<img src={aboutPhoto} alt='' />
+					<div className={styles.aboutText}>
+						<h3>About us</h3>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing
+							elit. Dolore eius aperiam debitis.
+						</p>
+						<p>Read More</p>
 					</div>
 				</div>
-			</div>
-		</div>
+				<div className={`${styles.panel} ${styles.services}`}>
+					<div className={styles.servicesText}>
+						<h3>Our Services</h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing
+							elit. Aperiam iste quae, beatae porro ab neque
+							perferendis.
+						</p>
+						<p>Read More</p>
+					</div>
+					<img src={portfolioPhoto} alt='' />
+				</div>
+			</main>
+		</>
 	);
 };
 

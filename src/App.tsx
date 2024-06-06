@@ -5,11 +5,6 @@ import Navbar from './components/Navbar/Navbar/Navbar';
 function App() {
 	return (
 		<>
-			<Navbar
-				onNavigate={function (sectionId: string): void {
-					throw new Error('Function not implemented.');
-				}}
-			/>
 			<Hero />
 		</>
 	);

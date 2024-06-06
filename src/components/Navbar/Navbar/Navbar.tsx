@@ -19,8 +19,8 @@ const Navbar = ({ onNavigate }: Props) => {
 		<>
 			<div ref={boxRef} className={`${styles.nav}`}>
 				<div className={styles.logo}>
-					<h2 className={styles.logoThick}>Juan</h2>
-					<h2 className={styles.logoThin}>Maurente</h2>
+					<h2 className={styles.logoThick}>Conscious</h2>
+					<h2 className={styles.logoThin}>Life</h2>
 				</div>
 
 				<Hamburguer menuOpen={menuOpen} toggleMenu={toggleMenu} />

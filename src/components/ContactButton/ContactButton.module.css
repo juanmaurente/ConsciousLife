@@ -2,13 +2,13 @@ button {
 	width: fit-content;
 	height: 60px;
 	padding: 12px 24px;
-	border: none;
+	border: 1px solid var(--color-white-transparent);
 	border-radius: 10px;
 	cursor: pointer;
 	color: #212c42;
 	font-weight: 700;
 	font-size: 1rem;
-	background-color: var(--color-white);
+	background-color: transparent;
 	transition: all ease-in-out 0.2s;
 }
 
