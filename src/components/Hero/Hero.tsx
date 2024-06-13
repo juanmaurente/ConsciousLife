@@ -16,12 +16,33 @@ const Hero = () => {
 			},
 		});
 
-		tl.from(`.${styles.navList} li`, {
+		tl.from(`.aboutPhoto`, {
+			opacity: 0,
+			x: -15,
+			y: -20,
+			duration: 0.6,
+		}).from(`.servicesPhoto`, {
 			opacity: 0,
 			y: 20,
-			stagger: 0.2,
-			duration: 0.3,
-		})
+			x: 15,
+			duration: 0.6,
+		});
+
+		tl.from(
+			`.title`,
+			{
+				opacity: 0,
+				x: -20,
+				duration: 0.3,
+			},
+			'-=0.2',
+		)
+			.from(`.${styles.navList} li`, {
+				opacity: 0,
+				y: 20,
+				stagger: 0.2,
+				duration: 0.3,
+			})
 
 			.from(
 				`.${styles.footerList} li`,
@@ -33,15 +54,7 @@ const Hero = () => {
 				},
 				'-=0.3',
 			)
-			.from(
-				`.title`,
-				{
-					opacity: 0,
-					x: -20,
-					duration: 0.3,
-				},
-				'-=0.2',
-			)
+
 			.from(
 				`.about`,
 				{
@@ -51,8 +64,9 @@ const Hero = () => {
 				},
 				'-=0.2',
 			)
+
 			.from(
-				`.portfolio`,
+				`.services`,
 				{
 					opacity: 0,
 					x: -20,
@@ -108,8 +122,8 @@ const Hero = () => {
 				</div>
 
 				<div className={`${styles.panel} ${styles.about}`}>
-					<img src={aboutPhoto} alt='' />
-					<div className={styles.aboutText}>
+					<img src={aboutPhoto} className='aboutPhoto' alt='' />
+					<div className={`${styles.aboutText} about`}>
 						<h3>About us</h3>
 						<p>
 							Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -118,8 +132,8 @@ const Hero = () => {
 						<p>Read More</p>
 					</div>
 				</div>
-				<div className={`${styles.panel} ${styles.services}`}>
-					<div className={styles.servicesText}>
+				<div className={`${styles.panel} ${styles.services} `}>
+					<div className={`${styles.servicesText} services`}>
 						<h3>Our Services</h3>
 						<p>
 							Lorem ipsum dolor sit amet consectetur, adipisicing
@@ -128,7 +142,11 @@ const Hero = () => {
 						</p>
 						<p>Read More</p>
 					</div>
-					<img src={portfolioPhoto} alt='' />
+					<img
+						src={portfolioPhoto}
+						className='servicesPhoto'
+						alt=''
+					/>
 				</div>
 			</main>
 		</>
