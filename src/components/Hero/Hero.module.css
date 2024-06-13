@@ -50,44 +50,6 @@ h3 {
 	justify-content: space-around;
 }
 
-.navList {
-	display: flex;
-	justify-content: space-around;
-}
-
-.navList li {
-	list-style: none;
-}
-.navList li a {
-	color: #697476;
-	text-transform: uppercase;
-	font-weight: 300;
-	transition: ease-in-out all 0.2s;
-}
-
-.navList li a:hover {
-	color: var(--color-white);
-}
-
-.footerList {
-	display: flex;
-}
-
-.footerList li {
-	list-style: none;
-}
-
-.footerList li a {
-	color: #697476;
-	text-transform: uppercase;
-	font-weight: 300;
-	transition: ease-in-out all 0.2s;
-}
-
-.footerList li a:hover {
-	color: var(--color-white);
-}
-
 .about,
 .services {
 	background-color: var(--color-white);

@@ -4,6 +4,8 @@ import portfolioPhoto from '../../assets/pexels-timegrocery-1905054.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar/Navbar';
 
 const Hero = () => {
 	useGSAP(() => {
@@ -37,23 +39,6 @@ const Hero = () => {
 			},
 			'-=0.2',
 		)
-			.from(`.${styles.navList} li`, {
-				opacity: 0,
-				y: 20,
-				stagger: 0.2,
-				duration: 0.3,
-			})
-
-			.from(
-				`.${styles.footerList} li`,
-				{
-					opacity: 0,
-					y: 20,
-					stagger: 0.2,
-					duration: 0.3,
-				},
-				'-=0.3',
-			)
 
 			.from(
 				`.about`,
@@ -80,22 +65,11 @@ const Hero = () => {
 		<>
 			<main>
 				<div className={`${styles.panel} ${styles.welcome}`}>
-					<nav>
-						<ul className={styles.navList}>
-							<li>
-								<a href=''>Home</a>
-							</li>
-							<li>
-								<a href=''>About</a>
-							</li>
-							<li>
-								<a href=''>Gallery</a>
-							</li>
-							<li>
-								<a href=''>Contact</a>
-							</li>
-						</ul>
-					</nav>
+					<Navbar
+						onNavClick={function (): void {
+							throw new Error('Function not implemented.');
+						}}
+					/>
 					<div className='title'>
 						<h1>Conscious Life</h1>
 						<h3 className={styles.headerWhite}>
@@ -106,19 +80,7 @@ const Hero = () => {
 							elit. Dolore eius aperiam debitis.
 						</p>
 					</div>
-					<footer>
-						<ul className={styles.footerList}>
-							<li>
-								<a href=''>Link1</a>
-							</li>
-							<li>
-								<a href=''>Link2</a>
-							</li>
-							<li>
-								<a href=''>Link3</a>
-							</li>
-						</ul>
-					</footer>
+					<Footer />
 				</div>
 
 				<div className={`${styles.panel} ${styles.about}`}>

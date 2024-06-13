@@ -1,60 +1,54 @@
+// src/components/Navbar/Navbar.jsx
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Navbar.module.css';
-import Hamburguer from '../Hamburguer/Hamburguer';
-import FullPageMenu from '../FullPageMenu/FullPageMenu';
-import { useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
 
 interface Props {
-	onNavigate: (sectionId: string) => void;
+	onNavClick: () => void;
 }
 
-const Navbar = ({ onNavigate }: Props) => {
-	const [menuOpen, setMenuOpen] = useState(false);
-	const boxRef = useRef<HTMLDivElement>(null);
+const Navbar = ({ onNavClick }: Props) => {
+	useGSAP(() => {
+		gsap.registerPlugin(ScrollTrigger);
 
-	const toggleMenu = () => {
-		setMenuOpen(!menuOpen);
-	};
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: `.${styles.nav}`,
+				start: 'top center',
+			},
+		});
+
+		tl.from(`.${styles.navList} li`, {
+			opacity: 0,
+			y: 20,
+			stagger: 0.2,
+			duration: 0.3,
+		});
+	}, []);
 
 	return (
-		<>
-			<div ref={boxRef} className={`${styles.nav}`}>
-				<div className={styles.logo}>
-					<h2 className={styles.logoThick}>Conscious</h2>
-					<h2 className={styles.logoThin}>Life</h2>
-				</div>
-
-				<Hamburguer menuOpen={menuOpen} toggleMenu={toggleMenu} />
-
-				<ul className={styles.navList}>
-					<li
-						className={styles.navItem}
-						onClick={() => onNavigate('home')}>
+		<nav className={styles.nav}>
+			<ul className={styles.navList}>
+				<li>
+					<a href='#home' onClick={() => onNavClick()}>
 						Home
-					</li>
-					<li
-						className={styles.navItem}
-						onClick={() => onNavigate('about')}>
+					</a>
+				</li>
+				<li>
+					<a href='#about' onClick={() => onNavClick()}>
 						About
-					</li>
-					<li
-						className={styles.navItem}
-						onClick={() => onNavigate('projects')}>
-						Projects
-					</li>
-					<li
-						className={styles.navItem}
-						onClick={() => onNavigate('contact')}>
-						Contact
-					</li>
-				</ul>
-			</div>
-
-			<FullPageMenu
-				menuOpen={menuOpen}
-				onNavigate={onNavigate}
-				toggleMenu={toggleMenu}
-			/>
-		</>
+					</a>
+				</li>
+				<li>
+					<a href='#gallery'>Gallery</a>
+				</li>
+				<li>
+					<a href='#contact'>Contact</a>
+				</li>
+			</ul>
+		</nav>
 	);
 };
 
