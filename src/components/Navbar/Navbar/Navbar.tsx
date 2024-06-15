@@ -42,7 +42,7 @@ const Navbar = ({ onNavClick }: Props) => {
 					</a>
 				</li>
 				<li>
-					<a href='#gallery'>Gallery</a>
+					<a href='#services'>Services</a>
 				</li>
 				<li>
 					<a href='#contact'>Contact</a>
