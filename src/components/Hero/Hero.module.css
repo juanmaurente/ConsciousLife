@@ -10,6 +10,8 @@ main {
 	display: grid;
 	grid-auto-rows: 1fr;
 	padding: 3rem 6rem;
+	position: relative;
+	z-index: 1;
 }
 
 .welcome h1 {
@@ -50,10 +52,6 @@ main {
 	padding: 5rem;
 }
 
-.servicesText {
-	text-align: right;
-}
-
 .about h3,
 .services h3 {
 	color: var(--color-black);
@@ -66,17 +64,56 @@ main {
 .about img,
 .services img {
 	width: 100%;
-	max-height: 50vh;
+	height: 70vh;
 	object-fit: cover;
+}
+
+.about .aboutText,
+.services .servicesText {
+	padding: 3rem 6rem;
+}
+
+.about .aboutText h3,
+.services .servicesText h3 {
+	margin-bottom: 2rem;
+}
+
+.about .aboutText p:last-child,
+.services .servicesText p:last-child {
+	position: relative;
+	padding-top: 2rem;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.about .aboutText p:last-child::after,
+.services .servicesText p:last-child::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+	width: 25%;
+	border-bottom: 1px solid #21000025;
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
+}
+
+.about .aboutText p:last-child:hover::after,
+.services .servicesText p:last-child:hover::after {
+	font-weight: 500;
+	width: 50%;
+	border-bottom: 1px solid #2100008a;
+	transform: translateX(-50%);
 }
 
 @media screen and (min-width: 1024px) {
 	main {
 		display: grid;
-		grid-template-columns: 1.4fr 1fr 1fr;
+		grid-template-columns: repeat(2, 1fr);
 		width: 100vw;
 		height: 100vh;
 		color: #697476;
+		gap: 3px;
 	}
 
 	.welcome {
@@ -84,13 +121,14 @@ main {
 		display: grid;
 		grid-auto-rows: 1fr;
 		padding: 3rem 6rem;
+		grid-column: span 2;
 	}
 
 	.welcome h1 {
 		color: var(--color-white);
 		font-size: 3.5rem;
 		font-weight: 500;
-		margin-bottom: 2rem;
+		margin-bottom: 3.5rem;
 	}
 
 	h3 {
@@ -121,32 +159,31 @@ main {
 
 	.about,
 	.services {
-		background-color: var(--color-white);
 		display: grid;
-		grid-template-rows: 2fr 1fr;
+		grid-auto-rows: 1fr;
 		height: 100vh;
+		background-color: #d0d3ce13;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	main {
+		display: grid;
+		grid-template-columns: 1.4fr repeat(2, 1fr);
+		width: 100vw;
+		height: 100vh;
+		color: #697476;
 	}
 
-	.about .aboutText,
-	.services .servicesText {
-		padding: 6rem;
+	.welcome {
+		background-color: #122429;
+		display: grid;
+		grid-auto-rows: 1fr;
+		padding: 3rem 6rem;
+		grid-column: auto;
 	}
 
-	.about .aboutText h3,
-	.services .servicesText h3 {
-		margin-bottom: 2rem;
-	}
-
-	.about .aboutText p:last-child,
-	.services .servicesText p:last-child {
-		padding-top: 2rem;
-		text-decoration: underline;
-		transition: ease-in-out all 0.2s;
-	}
-
-	.about .aboutText p:last-child:hover,
-	.services .servicesText p:last-child:hover {
-		font-weight: 500;
-		cursor: pointer;
+	.servicesText {
+		align-self: flex-end;
 	}
 }

@@ -1,6 +1,6 @@
 import styles from './Hero.module.css';
 import aboutPhoto from '../../assets/pexels-pixabay-47059.jpg';
-import portfolioPhoto from '../../assets/pexels-timegrocery-1905054.jpg';
+import portfolioPhoto from '../../assets/pexels-yankrukov-8436683.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
