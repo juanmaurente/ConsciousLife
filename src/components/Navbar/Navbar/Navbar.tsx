@@ -1,8 +1,6 @@
-// src/components/Navbar/Navbar.jsx
-import { useEffect } from 'react';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Navbar.module.css';
+import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 interface Props {

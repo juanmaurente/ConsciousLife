@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './PageDescription.module.css';
